@@ -1,0 +1,26 @@
+#Registro e inicio de Sesión en Docker Hub
+
+
+## Login
+
+docker Login
+
+## Descargamos algunas imagenes
+
+docker pull hello-world
+docker pull nginx
+docker pull mysql
+
+
+## Ejecutamos esos contenedores
+
+docker run hello-world
+docker run -d -p 8080:80 nginx
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 mysql
+
+
+## Verificamos que esten corriendo de manera adecuada
+
+docker ps 
+docker logs id-contenedor
+
