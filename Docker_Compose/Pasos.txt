@@ -1,0 +1,16 @@
+# Vamos a levantar una aplicación usando docker compose
+
+## Primero vamos a clonar un repositorio 
+
+sudo git clone https://github.com/AVu120/react-and-node-express-on-docker.git
+
+## Navegamos hasta la carpeta
+
+cd react-and-node-express-on-docker
+
+#Levantamos el docker-compose
+
+docker compose up -d
+
+## Verificamos el frontend y el backend en nuestro puerto 3000 y el back en el 5000
+

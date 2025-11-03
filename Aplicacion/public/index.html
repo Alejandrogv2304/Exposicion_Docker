@@ -3,35 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi App Dockerizada</title>
+  <title>Docker: El Futuro de la Distribución de Software</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: linear-gradient(to right, #0db7ed, #1d63ed);
-      color: white;
-      margin: 0;
-      padding: 50px;
+    /* Configuración de color para el tema de Docker */
+    :root {
+      --docker-blue: #2496ED;
+      --docker-dark: #1F2937;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
+    .container-bg {
+      background: linear-gradient(135deg, var(--docker-dark) 0%, #111827 100%);
     }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #cceaff;
+    .docker-blue-bg {
+        background-color: var(--docker-blue);
     }
   </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'docker-blue': '#2496ED',
+            'docker-light': '#61AFEF',
+            'base-dark': '#111827',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <h1> Bienvenido a mi aplicación Dockerizada</h1>
-  <p>Esta aplicación Node.js está corriendo dentro de un contenedor Docker, demostrando cómo empaquetar y desplegar servicios de manera eficiente.</p>
-  <footer>Creado por Alejandro Gómez • Ingeniería de Sistemas UIS</footer>
+<body class="container-bg min-h-screen text-white font-sans antialiased p-4 sm:p-8">
+
+  <!-- Encabezado Principal -->
+  <header class="text-center mb-12">
+    <div class="inline-block p-3 rounded-full bg-docker-blue shadow-lg shadow-docker-blue/50 mb-4">
+        <!-- SVG simple de la ballena Docker para un toque visual -->
+        <svg class="w-10 h-10" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-2h-2v2zm0-4h2V7h-2v6z"/>
+        </svg>
+    </div>
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-3 tracking-tight">
+      Docker: El Estándar de la Contenerización
+    </h1>
+    <p class="text-xl text-gray-300 max-w-3xl mx-auto">Aprende por qué Docker es esencial para el desarrollo, el despliegue y la consistencia de tus aplicaciones.</p>
+  </header>
+
+  <!-- Contenido Principal - Grid de Secciones -->
+  <main class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+    <!-- Tarjeta 1: La Importancia de Docker -->
+    <section class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-docker-blue/30 border border-gray-700">
+      <h2 class="text-2xl font-bold mb-3 text-docker-blue">1. ¿Qué es Docker?</h2>
+      <p class="text-gray-400 leading-relaxed">
+        Docker es una plataforma que utiliza la tecnología de contenedores para empaquetar una aplicación y todas sus dependencias (bibliotecas, configuraciones, runtime, etc.) en una unidad estandarizada. Esto garantiza que la aplicación se ejecute de la misma manera en cualquier entorno, ya sea desarrollo, pruebas o producción.
+      </p>
+    </section>
+
+    <!-- Tarjeta 2: Beneficios Clave (Aislamiento y Portabilidad) -->
+    <section class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-docker-blue/30 border border-gray-700">
+      <h2 class="text-2xl font-bold mb-3 text-docker-blue">2. Consistencia y Portabilidad</h2>
+      <ul class="list-disc list-inside text-gray-400 space-y-2">
+        <li>**"Funciona en mi máquina":** Este problema desaparece, ya que el contenedor incluye todo lo que necesita la app, aislándola del sistema operativo anfitrión.</li>
+        <li>**Aislamiento:** Los contenedores son ligeros y autónomos. Si un contenedor falla, no afecta a otros servicios ni al sistema principal.</li>
+        <li>**Escalabilidad:** Permite desplegar y escalar rápidamente servicios idénticos en cualquier infraestructura.</li>
+      </ul>
+    </section>
+
+    <!-- Tarjeta 3: Conceptos Esenciales (Imagen y Contenedor) -->
+    <section class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-docker-blue/30 border border-gray-700">
+      <h2 class="text-2xl font-bold mb-3 text-docker-blue">3. Imagen vs. Contenedor</h2>
+      <p class="text-gray-400 leading-relaxed">
+        La distinción es crucial:
+      </p>
+      <ul class="text-gray-300 mt-2 space-y-2">
+        <li>**Imagen:** Es una plantilla inmutable de solo lectura. Es el *blueprint* que contiene el código y las dependencias. Se construye a partir de un `Dockerfile`.</li>
+        <li>**Contenedor:** Es una instancia ejecutable de una Imagen. Es la unidad viva, aislada y ejecutable de tu aplicación. Puedes iniciar, detener, mover o eliminar contenedores.</li>
+      </ul>
+    </section>
+
+    <!-- Tarjeta 4: Docker Compose -->
+    <section class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-docker-blue/30 border border-gray-700 md:col-span-2">
+      <h2 class="text-2xl font-bold mb-3 text-docker-blue">4. Docker Compose: Orquestación Local</h2>
+      <p class="text-gray-400 leading-relaxed mb-3">
+        Muchas aplicaciones modernas requieren múltiples servicios (por ejemplo: una API de Node.js, una base de datos PostgreSQL y un frontend React). **Docker Compose** es la herramienta clave para gestionar este ecosistema.
+      </p>
+      <div class="bg-gray-900 p-3 rounded-lg text-sm text-green-400 overflow-x-auto">
+        <pre class="whitespace-pre-wrap">$ docker compose up -d</pre>
+      </div>
+      <p class="text-gray-400 mt-3 text-sm">
+        Compose utiliza un archivo YAML (`docker-compose.yml`) para definir y ejecutar todos los servicios, redes y volúmenes con un solo comando, simplificando radicalmente los entornos de desarrollo multi-servicio.
+      </p>
+    </section>
+
+    <!-- Tarjeta 5: Ecosistema y Futuro -->
+    <section class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-docker-blue/30 border border-gray-700">
+      <h2 class="text-2xl font-bold mb-3 text-docker-blue">5. Más Allá de Docker</h2>
+      <p class="text-gray-400 leading-relaxed">
+        Los contenedores son la base de la nube moderna. Plataformas como **Kubernetes (K8s)** utilizan contenedores Docker (o estándares compatibles como `containerd`) para orquestar miles de servicios a escala global, manejando automáticamente el balanceo de carga, la alta disponibilidad y la gestión de recursos.
+      </p>
+    </section>
+
+  </main>
+
+  
+  <footer class="mt-16 text-center text-gray-500 text-sm">
+    <p>&copy; 2025 Alejandro Gómez</p>
+  </footer>
 </body>
 </html>

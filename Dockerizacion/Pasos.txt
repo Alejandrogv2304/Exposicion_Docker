@@ -1,0 +1,22 @@
+#Primero clonamos el repositorio 
+
+sudo git clone https://github.com/Alejandrogv2304/Exposicion_Docker.git
+
+## Luego navegamos hasta dentro de la carpeta Aplicacion
+
+docker build -t mi-app-node .
+
+## Con el comando anterior construimos la imagen de nuestra app y luego la desplegamos
+
+docker run -d -p 3000:3000 mi-app-node
+
+## Vamos a nuestro navegador y verificamos que este sirviendo el archivo
+
+## Ahora vamos a subir nuestra imagen a Docker Hub
+
+docker tag mi-app-node su-usuario/mi-app-node:latest
+
+## Hacemos el push
+
+docker push su-usuariomi-app-node:latest
+
