@@ -1,0 +1,21 @@
+## Práctica: Nginx como proxy inverso
+
+El objetivo de esta práctica es:
+
+> Configurar Nginx como proxy inverso dentro de Docker para exponer servicios y acceder remotamente a los contenedores.
+
+## ¿Qué se levanta?
+
+Usando `docker-compose.yml` (dentro de `Nginx_Proxy_Inverso/`) se crean dos servicios:
+
+- **app**  
+  - Construida desde `../Aplicacion` con el `Dockerfile` del proyecto.  
+  - Escucha en el puerto `3000` dentro de la red interna de Docker.
+
+- **nginx**  
+  - Usa la imagen oficial `nginx:alpine`.  
+  - Expone el puerto `80` del contenedor en el puerto `80` del host.  
+  - Carga la configuración del archivo `default.conf`, donde se define el proxy inverso.
+
+
+
